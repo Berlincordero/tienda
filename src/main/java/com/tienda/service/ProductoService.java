@@ -7,10 +7,10 @@ import java.util.List;
 
 public interface ProductoService {
     // metodo para consultar todas las productos //el parametro define si se muestra solo las activas o todas 
-    public List<Producto> getProducto(boolean activos);
+    public List<Producto> getProductos(boolean activos);
     
     // se obtiene una producto por su id
-    public Producto getproducto(Producto producto);
+    public Producto getProducto(Producto producto);
     
     //Inserta: se inserta cuando el idproducto esta vacio(valor 0 o null)
     //modifica: se modifica cuando el idproducto no esta vacio 

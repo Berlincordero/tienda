@@ -28,11 +28,10 @@ public class ProductoController {
 
     @GetMapping("/listado")
     public String listado(Model model) {
-        List<Producto> productos = productoService.getProducto(false);
-        List<Producto> producto= productoService.getProducto(true);
-        model.addAttributes("productos", productos);
-        model.addAttributes("categoria", productos);
-        model.addAttributes("totalproductos", productos.size());
+        List<Producto> productos = productoService.getProductos(false);
+        model.addAttribute("productos", productos);
+        model.addAttribute("categoria", productos);
+        model.addAttribute("totalproductos", productos.size());
         
         return "/producto/listado";
        
@@ -68,9 +67,8 @@ public class ProductoController {
     @GetMapping("/modificar/{idProducto}")
     public String productoModificar(Producto producto, Model model) {
         producto = productoService.getProducto(producto);
-        List<Producto> producto = productoService.getProducto(true);
-        model.addAttribute("producto", producto);
-        model.addAttribute("categoria", producto);
+        List<Producto> product = productoService.getProductos(true);
+        model.addAttribute("product", product);
         return "/producto/modifica";
     }
 }
